@@ -131,11 +131,17 @@ int partition(node * arr, int lo, int hi, int (*comparator)(void*, void*)){
     }
 
     //Swap elements at left-1 with pivot
-    ptrl = ptrl->prev;
+    left--;
+    i = 0;
+    ptrl = arr;
+    while (i != left){
+        ptrl = ptrl->next;
+        i++;
+    }
     strcpy(ptrpivot->data, ptrl->data);
     strcpy(ptrl->data, pivot);
 
-    return left-1;
+    return left;
 
 }
 
