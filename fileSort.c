@@ -47,6 +47,7 @@ int comparatorStr(void* a, void* b){
 }
 
 int insertionSort(void* toSort, int (*comparator)(void*, void*) ){
+    printf("Using insertion Sort\n");
     node * sort = (node *)toSort;
     char key[256];
     node * ptr = sort;
@@ -71,6 +72,96 @@ int insertionSort(void* toSort, int (*comparator)(void*, void*) ){
 		ptr = ptr->next;
 	}
 	return 0;
+}
+
+int partition(node * arr, int lo, int hi, int (*comparator)(void*, void*)){
+    char* pivot = malloc(sizeof(char) * 256);
+    node * ptr = arr;
+    int i = 0;
+    while (i != lo){
+        ptr = ptr->next;
+        i++;
+    }
+    strcpy(pivot, ptr->data);
+    node * ptrpivot = ptr;
+    node * ptrl = ptr->next;
+    ptr = arr;
+    i = 0;
+    while (i != hi){
+        ptr = ptr->next;
+        i++;
+    }
+    node * ptrr = ptr;
+
+    int left = lo + 1;
+    int right = hi;
+    while (7 > 2){
+        while (left <= right){
+            if (comparator(ptrl->data, pivot) < 0){
+                left++;
+                ptrl = ptrl->next;
+            } else {
+                break;
+            }
+        }
+
+        while (right > left){
+            if (comparator(ptrr->data, pivot) < 0){
+                break;
+            } else {
+                right--;
+                ptrr = ptrr->prev;
+            }
+        }
+
+        if (left >= right){
+            break;
+        }
+
+        //Swap elements at left and right
+        char buffer[256];
+        strcpy(buffer, ptrl->data);
+        strcpy(ptrl->data, ptrr->data);
+        strcpy(ptrr->data, buffer);
+
+        left++;
+        right--;
+        ptrl = ptrl->next;
+        ptrr = ptrr->prev;
+    }
+
+    //Swap elements at left-1 with pivot
+    ptrl = ptrl->prev;
+    strcpy(ptrpivot->data, ptrl->data);
+    strcpy(ptrl->data, pivot);
+
+    return left-1;
+
+}
+
+void quickSortR(node * arr, int lo, int hi, int (*comparator)(void*, void*)){
+    if ((hi-lo) <= 0) return; // Less than 2 items
+
+    int splitPoint = partition(arr, lo, hi, comparator);
+    quickSortR(arr, lo, splitPoint - 1, comparator);
+    quickSortR(arr, splitPoint + 1, hi, comparator);
+}
+
+int quickSort(void* toSort, int (*comparator)(void*, void*)){
+    printf("Using QuickSort\n");
+    node * sort = (node*)toSort;
+    //Find out the length of the linked list
+    int length = 0;
+    node * ptr = sort;
+    while (ptr != NULL){
+        length++;
+        ptr = ptr->next;
+    }
+    if (length <= 1){
+        return; //Already sorted
+    }
+    quickSortR(sort, 0, length - 1, comparator);
+    return 0;
 }
 
 void printlist(node * ptr){
@@ -126,9 +217,24 @@ int main(int argc, char** argv){
     printlist(sort);
     //Figure out is num or char
     if(isdigit(sort->data[0])){
-        insertionSort(sort, comparatorInt);
+        if (argv[1][0] == '-' && argv[1][1] == 'i'){
+            insertionSort(sort, comparatorInt);
+        } else if (argv[1][0] == '-' && argv[1][1] == 'q'){
+            quickSort(sort, comparatorInt);
+        } else {
+            printf("Invalid Entry: Please use either -i or -q for insertion sort or quicksort\n");
+        }
+    } else if (isalpha(sort->data[0])){
+        if (argv[1][0] == '-' && argv[1][1] == 'i'){
+            insertionSort(sort, comparatorStr);
+        } else if (argv[1][0] == '-' && argv[1][1] == 'q'){
+            quickSort(sort, comparatorStr);
+        } else {
+            printf("Invalid Entry: Please use either -i or -q for insertion sort or quicksort\n");
+
+        }
     } else {
-        insertionSort(sort, comparatorStr);
+        printf("Invalid Entry: The first character is neither a num or a letter please enter a new file\n");
     }
 
     printf("After Sorting: \n");
