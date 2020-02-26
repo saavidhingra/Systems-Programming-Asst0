@@ -6,6 +6,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <ctype.h>
+#include <stdbool.h>
 
 typedef struct node
 {
@@ -190,12 +191,26 @@ int main(int argc, char** argv){
     sort->next = NULL;
     node * ptr = sort;
 	int fd = open(argv[2], O_RDONLY);
+	if (fd == -1){
+        printf("Error opening file, EXITTING PROGRAM\n");
+        exit(EXIT_FAILURE);
+	}
 	char buffer = '!';
     int readed = 0;
     char* str = malloc(sizeof(char) * 256);
     str[0] = '\0';
+    bool emptyFileCheck = true;
     do{
         readed = read(fd, &buffer, 1);
+        if (emptyFileCheck){
+            if (readed == 0) { //First check of file and the file is empty
+                printf("The file given is empty, EXIT PROGRAM\n");
+                exit(EXIT_FAILURE);
+            } else {
+                emptyFileCheck = false;
+            }
+        }
+
         if (readed != 0){
 			if (buffer != ' '){
 				if (isdigit(buffer) || isalpha(buffer) || buffer == '-'){
@@ -203,7 +218,7 @@ int main(int argc, char** argv){
 		        	temp[0] = buffer;
 		        	temp[1] = '\0';
 		        	strcat(str, temp);
-		        } else if (buffer == ',' || buffer == '\n' ){
+		        } else if ((buffer == ',' || buffer == '\n') && strlen(str) != 0 ){
 		        	strcpy(ptr->data, str);
 		        	node * temp = malloc(sizeof(node));
 		        	temp->data = malloc(sizeof(char) * 256);
@@ -218,6 +233,9 @@ int main(int argc, char** argv){
 
         }
     } while(readed != 0);
+    //Delete the last node since it will always be empty
+    ptr = ptr->prev;
+    ptr->next = NULL;
 
     printf("Before Sorting: \n");
     printlist(sort);
@@ -247,6 +265,8 @@ int main(int argc, char** argv){
     printlist(sort);
 
 	printf("End of File\n");
+
+	close(fd);
 
 	return 0;
 }
