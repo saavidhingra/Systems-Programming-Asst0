@@ -192,7 +192,7 @@ int main(int argc, char** argv){
         readed = read(fd, &buffer, 1);
         if (readed != 0){
 			if (buffer != ' '){
-				if (isdigit(buffer) || isalpha(buffer)){
+				if (isdigit(buffer) || isalpha(buffer) || buffer == '-'){
 					char* temp = malloc(sizeof(char) * 2);
 		        	temp[0] = buffer;
 		        	temp[1] = '\0';

@@ -1,0 +1,1 @@
+If the first number is negative it won't work. Gotta fix
