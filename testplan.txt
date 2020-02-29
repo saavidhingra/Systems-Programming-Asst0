@@ -387,19 +387,19 @@ Case 3: user provides correct number of arguments and proper user input
 	
 	Example: ./fileSort test8.txt -i
 	returned: 
-			    Before Sorting: 
-				|we|
-				|r|
-				|working|
-				|onnproje|
-				|ct|
-				|hi|
-				Using insertion Sort
-				After Sorting: 
-				|ct|
-				|hi|
-				|onnproje|
-				|r|
-				|we|
-				|working|
-				End of File
+		Before Sorting: 
+		|we|
+		|r|
+		|working|
+		|onnproje|
+		|ct|
+		|hi|
+		Using insertion Sort
+		After Sorting: 
+		|ct|
+		|hi|
+		|onnproje|
+		|r|
+		|we|
+		|working|
+		End of File
