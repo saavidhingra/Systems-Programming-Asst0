@@ -385,7 +385,7 @@ Case2: user does not provide the arguments in the proper order
 
 Case 3: user provides correct number of arguments and proper user input
 	
-	Example: ./fileSort test8.txt -i
+	Example: ./fileSort -i test8.txt
 	returned: 
 		Before Sorting: 
 		|we|
