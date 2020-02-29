@@ -1,6 +1,9 @@
-If the first number is negative it won't work. Gotta fix
-NEED to print out error for empty file (FIXED)
-Free every malloc variable and check every malloc call for NULL
-Format the output to match description
-Need to implemelent error check for incorrect file path name given (FIXED)
+In the process of testing our code, we ran into several bugs which consisted of:
+
+- If the first number is negative it won't work. Gotta fix
+- NEED to print out error for empty file (FIXED)
+- Free every malloc variable and check every malloc call for NULL
+- Format the output to match description
+- Need to implemelent error check for incorrect file path name given (FIXED)
+- We ran into a problem where a 0 kept printing out
 

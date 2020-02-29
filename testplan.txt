@@ -1,1 +1,401 @@
-a document detailing how you tested your code - what tests did you do and in a sentence or two, what you were testing for
+a document detailing how you tested your code - and in a sentence or two, what you were testing for
+
+Assignment 0 - Test Plan
+Karan Amin
+Saavi Dhingra
+
+Listed below are the 11 test cases we performed. It displays the output for quick sort and insertion sort respectively.
+
+-------------------------------------
+
+test1.txt: hi,there, every,     one
+
+output:
+
+Before Sorting: 
+|hi|
+|there|
+|every|
+|one|
+Using QuickSort
+After Sorting: 
+|every|
+|hi|
+|one|
+|there|
+End of File
+
+Before Sorting: 
+|hi|
+|there|
+|every|
+|one|
+Using insertion Sort
+After Sorting: 
+|every|
+|hi|
+|one|
+|there|
+End of File
+
+-------------------------------------
+
+test2.txt: 123, 14, 510       , 1
+
+output:
+
+Before Sorting: 
+|123|
+|14|
+|510|
+|1|
+Using QuickSort
+After Sorting: 
+|1|
+|14|
+|123|
+|510|
+End of File
+
+Before Sorting: 
+|123|
+|14|
+|510|
+|1|
+Using insertion Sort
+After Sorting: 
+|1|
+|14|
+|123|
+|510|
+End of File
+
+-------------------------------------
+
+test3.txt: 
+
+output:
+
+Segmentation fault
+
+Segmentation fault
+
+-------------------------------------
+
+test4.txt: h e ll, o , my name,			is saa v i
+
+output:
+
+Before Sorting: 
+|hell|
+|o|
+|myname|
+|issaavi|
+Using QuickSort
+After Sorting: 
+|hell|
+|issaavi|
+|myname|
+|o|
+End of File
+
+Before Sorting: 
+|hell|
+|o|
+|myname|
+|issaavi|
+Using insertion Sort
+After Sorting: 
+|hell|
+|issaavi|
+|myname|
+|o|
+End of File
+
+-------------------------------------
+
+test5.txt: 123 456 789 000
+
+output:
+
+Before Sorting: 
+|123456789000|
+Using QuickSort
+After Sorting: 
+|123456789000|
+End of File
+
+Before Sorting: 
+|123456789000|
+Using insertion Sort
+After Sorting: 
+|123456789000|
+End of File
+
+-------------------------------------
+
+test6.txt: hi my name is , kar , an,  hello hi , bye
+
+output:
+
+Before Sorting: 
+|himynameis|
+|kar|
+|an|
+|hellohi|
+|bye|
+Using QuickSort
+After Sorting: 
+|an|
+|bye|
+|hellohi|
+|himynameis|
+|kar|
+End of File
+
+Before Sorting: 
+|himynameis|
+|kar|
+|an|
+|hellohi|
+|bye|
+Using insertion Sort
+After Sorting: 
+|an|
+|bye|
+|hellohi|
+|himynameis|
+|kar|
+End of File
+
+-------------------------------------
+
+test7.txt: 9 0 8 2 4 , 3 , 9, 4 , 9 , , , 
+
+output:
+
+Before Sorting: 
+|90824|
+|3|
+|9|
+|4|
+|9|
+Using QuickSort
+After Sorting: 
+|3|
+|4|
+|9|
+|9|
+|90824|
+End of File
+
+Before Sorting: 
+|90824|
+|3|
+|9|
+|4|
+|9|
+Using insertion Sort
+After Sorting: 
+|3|
+|4|
+|9|
+|9|
+|90824|
+End of File
+
+-------------------------------------
+
+test8.txt: we , r , working, on n pr o j e , , c t   			, hi 
+
+output:
+
+Before Sorting: 
+|we|
+|r|
+|working|
+|onnproje|
+|ct|
+|hi|
+Using QuickSort
+After Sorting: 
+|ct|
+|hi|
+|onnproje|
+|r|
+|we|
+|working|
+End of File
+
+Before Sorting: 
+|we|
+|r|
+|working|
+|onnproje|
+|ct|
+|hi|
+Using insertion Sort
+After Sorting: 
+|ct|
+|hi|
+|onnproje|
+|r|
+|we|
+|working|
+End of File
+
+-------------------------------------
+
+test9.txt: 786 3453 , 32834 , 3434, 23 , 1 0 , 12 , 2
+
+output:
+
+Before Sorting: 
+|7863453|
+|32834|
+|3434|
+|23|
+|10|
+|12|
+|2|
+Using QuickSort
+After Sorting: 
+|2|
+|10|
+|12|
+|23|
+|3434|
+|32834|
+|7863453|
+End of File
+
+Before Sorting: 
+|7863453|
+|32834|
+|3434|
+|23|
+|10|
+|12|
+|2|
+Using insertion Sort
+After Sorting: 
+|2|
+|10|
+|12|
+|23|
+|3434|
+|32834|
+|7863453|
+End of File
+
+-------------------------------------
+
+test10.txt: systems proj, assignment one, due, march hello , hi 
+
+output:
+
+Before Sorting: 
+|systemsproj|
+|assignmentone|
+|due|
+|marchhello|
+|hi|
+Using QuickSort
+After Sorting: 
+|assignmentone|
+|due|
+|hi|
+|marchhello|
+|systemsproj|
+End of File
+
+Before Sorting: 
+|systemsproj|
+|assignmentone|
+|due|
+|marchhello|
+|hi|
+Using insertion Sort
+After Sorting: 
+|assignmentone|
+|due|
+|hi|
+|marchhello|
+|systemsproj|
+End of File
+
+-------------------------------------
+
+test11.txt: 1,311,-3,453	,12,-3
+
+output:
+
+Before Sorting: 
+|1|
+|311|
+|-3|
+|453|
+|12|
+|-3|
+Using QuickSort
+After Sorting: 
+|-3|
+|-3|
+|1|
+|12|
+|311|
+|453|
+End of File
+
+Before Sorting: 
+|1|
+|311|
+|-3|
+|453|
+|12|
+|-3|
+Using insertion Sort
+After Sorting: 
+|-3|
+|-3|
+|1|
+|12|
+|311|
+|453|
+End of File
+
+-------------------------------------
+
+We divided up our test cases to focus on integers and characters. We took into account negative values, blank spaces, and commas. We tested our code based on syntax errors, meeting the requirements for a proper format of the printed output, and ensuring that the code worked for negative values as well. To ensure that all edge cases were met, we focused on all possible errors related to user input. Based on the input -q or -i, we return an organized version of the test case prior to sorting and after it was sorted. Along with returning which sorting method was used, the program also returns when it has reached the end of the file.
+
+We tested for all possible error cases involving user input:
+
+Case1: user does not input the correct number of arguments
+	
+	Example: ./fileSort test8.txt	
+	returned: Not enough arguments
+
+Case2: user does not provide the arguments in the proper order
+	
+	Example: ./fileSort test5.txt -i
+	returned: Error opening file, EXITTING PROGRAM
+
+Case 3: user provides correct number of arguments and proper user input
+	
+	Example: ./fileSort test8.txt -i
+	returned: Before Sorting: 
+			  |we|
+		      |r|
+		      |working|
+			  |onnproje|
+			  |ct|
+			  |hi|
+			  Using insertion Sort
+			  After Sorting: 
+		      |ct|
+			  |hi|
+			  |onnproje|
+			  |r|
+			  |we|
+			  |working|
+			  End of File
