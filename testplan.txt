@@ -1,5 +1,3 @@
-a document detailing how you tested your code - and in a sentence or two, what you were testing for
-
 Assignment 0 - Test Plan
 Karan Amin
 Saavi Dhingra
@@ -366,7 +364,12 @@ End of File
 
 -------------------------------------
 
-We divided up our test cases to focus on integers and characters. We took into account negative values, blank spaces, and commas. We tested our code based on syntax errors, meeting the requirements for a proper format of the printed output, and ensuring that the code worked for negative values as well. To ensure that all edge cases were met, we focused on all possible errors related to user input. Based on the input -q or -i, we return an organized version of the test case prior to sorting and after it was sorted. Along with returning which sorting method was used, the program also returns when it has reached the end of the file.
+We divided up our test cases to focus on integers and characters. We took into account negative values, 
+blank spaces, and commas. We tested our code based on syntax errors, meeting the requirements for a proper 
+format of the printed output, and ensuring that the code worked for negative values as well. To ensure that 
+all edge cases were met, we focused on all possible errors related to user input. Based on the input -q or -i, 
+we return an organized version of the test case prior to sorting and after it was sorted. Along with returning 
+which sorting method was used, the program also returns when it has reached the end of the file.
 
 We tested for all possible error cases involving user input:
 
