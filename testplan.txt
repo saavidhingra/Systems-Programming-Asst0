@@ -2,11 +2,12 @@ Assignment 0 - Test Plan
 Karan Amin
 Saavi Dhingra
 
-Listed below are the 11 test cases we performed. It displays the output for quick sort and insertion sort respectively.
+Listed below are the 11 test cases we performed. It displays the output for quick sort and insertion sort respectively. The output format is different here than the program description for clarity purposes but final submission obeys output format according to the program description.
 
 -------------------------------------
 
 test1.txt: hi,there, every,     one
+Purpose: To test is our program handles spaces between input correctly by ignoring them.
 
 output:
 
@@ -39,6 +40,7 @@ End of File
 -------------------------------------
 
 test2.txt: 123, 14, 510       , 1
+Purpose: Tests for spaces before and after inputs and see if our program handles it correctly. Also tests if imperfect input works with numbers and character.
 
 output:
 
@@ -70,17 +72,20 @@ End of File
 
 -------------------------------------
 
-test3.txt: 
+test3.txt:
+Purpose: Tests if our program handles empty files correctly by outputing an Empty file error.
 
 output:
 
-Segmentation fault
+The file given is empty, EXITTING PROGRAM
 
-Segmentation fault
+The file given is empty, EXITTING PROGRAM
+
 
 -------------------------------------
 
-test4.txt: h e ll, o , my name,			is saa v i
+test4.txt: h e  ll, o , my name,			is saa v i
+Purpose: To see if our program can handle spaces between inputs by ignoring them and concatenatting characters together. Also tests if it ignores tabs correctly
 
 output:
 
@@ -112,27 +117,33 @@ End of File
 
 -------------------------------------
 
-test5.txt: 123 456 789 000
+test5.txt: 123 456 789 000, -2
+Purpose: Tests if the input value number is longer than what an int can hold, and sees if our program is able to handle that by using a long data type.
 
 output:
 
 Before Sorting: 
 |123456789000|
+|-2|
 Using QuickSort
-After Sorting: 
+After Sorting:
+|-2| 
 |123456789000|
 End of File
 
 Before Sorting: 
 |123456789000|
+|-2|
 Using insertion Sort
-After Sorting: 
+After Sorting:
+|-2| 
 |123456789000|
 End of File
 
 -------------------------------------
 
 test6.txt: hi my name is , kar , an,  hello hi , bye
+Purpose: Tests if the input given resembles a sentence. Since our program assumes each value is either a number or a single word, the program will ignore spaces and act as if the two words are actually one big word and proceeds to sort that.
 
 output:
 
@@ -168,7 +179,8 @@ End of File
 
 -------------------------------------
 
-test7.txt: 9 0 8 2 4 , 3 , 9, 4 , 9 , , , 
+test7.txt: 9 0 8 2 4 , 3 , 9, 4 , 9 , , ,
+Purpose: Tests if given numeric input has spaces in between. Program corrects this error by combining the digits to form one number, for example "9 0" would become "90" instead of "9", "0". Also tests for empty tokens and handles it by ignoring the input. DOES NOT ASSUME THAT EMPTY TOKEM MEANS 0! Program will ignore empty tokens
 
 output:
 
@@ -204,7 +216,8 @@ End of File
 
 -------------------------------------
 
-test8.txt: we , r , working, on n pr o j e , , c t   			, hi 
+test8.txt: we , r , working, on n pr o j e , , c t   			, hi
+Purpose: Tests empty tokens in between inputs instead of just at end. Also tests for empty tokens in files with characters data. DOES NOT SORT EMPTY TOKENS. EMPTY TOKENS ARE IGNORED. Program description does not specify whether to assume empty token as anything so we assumed empty tokens are input errors and are thus ignored.
 
 output:
 
@@ -245,6 +258,7 @@ End of File
 -------------------------------------
 
 test9.txt: 786 3453 , 32834 , 3434, 23 , 1 0 , 12 , 2
+Purpose: This input has no specific purpose that hasn't been tested for with inputs above but just further tests our program with random test values with spaces.
 
 output:
 
@@ -289,6 +303,7 @@ End of File
 -------------------------------------
 
 test10.txt: systems proj, assignment one, due, march hello , hi 
+Purpose: General input with no specific purpose that hasn't been tested above, just more variation in input to see if our program hold up to general input.
 
 output:
 
@@ -324,7 +339,8 @@ End of File
 
 -------------------------------------
 
-test11.txt: 1,311,-3,453	,12,-3
+test11.txt: 1,311,-3,453	,12,-11
+Purpose: Test our program with negative values.
 
 output:
 
@@ -334,10 +350,10 @@ Before Sorting:
 |-3|
 |453|
 |12|
-|-3|
+|-11|
 Using QuickSort
 After Sorting: 
-|-3|
+|-11|
 |-3|
 |1|
 |12|
@@ -351,10 +367,10 @@ Before Sorting:
 |-3|
 |453|
 |12|
-|-3|
+|-11|
 Using insertion Sort
 After Sorting: 
-|-3|
+|-11|
 |-3|
 |1|
 |12|
